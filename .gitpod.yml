@@ -7,7 +7,7 @@ tasks:
     env:
       WASP_TELEMETRY_CONTEXT: gitpod
     command: |
-      WASP_TELEMETRY_USER_ID=$GITPOD_WORKSPACE_ID
+      export WASP_TELEMETRY_USER_ID=$GITPOD_WORKSPACE_ID
       cd MyNewApp
       wasp start
 
