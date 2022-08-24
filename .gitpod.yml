@@ -1,15 +1,10 @@
+image:
+  file: .gitpod.Dockerfile
+
 # Learn more about this file at https://www.gitpod.io/docs/references/gitpod-yml
 tasks:
-  - before: |
-      echo "export PATH=$PATH:/home/gitpod/.local/bin" >> ~/.bashrc
-      . ~/.bashrc
-      curl -sSL https://get.wasp-lang.dev/installer.sh | sh
-    env:
-      WASP_TELEMETRY_CONTEXT: gitpod
-    command: |
-      export WASP_TELEMETRY_USER_ID=$GITPOD_WORKSPACE_ID
+  - command: |
       cd MyNewApp
-      export REACT_APP_API_URL="https://3001-$GITPOD_WORKSPACE_ID.$GITPOD_WORKSPACE_CLUSTER_HOST"
       wasp start
 
 ports:
